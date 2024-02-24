@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<head>
+    <style>
+        h2{
+    text-align: center;
+    background-color: gainsboro;
+    margin-top: 30px;
+    line-height: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+        }
+        .dv1{
+          margin-top: 20px;
+        }
+        #Rmain{
+           display: grid;
+           grid-template-columns: auto auto auto auto auto auto;
+        }
+        #Bmain{
+            width: 100%;
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+           margin: auto;
+           margin-left: 200px;
+           margin-top: 30px;
+        }
+        #Wmain{
+            width: 100%;
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            margin-left: 150px;
+            margin-top: 20px;
+            margin-bottom: 30px;
+        }
+    </style>
+    <title>About</title>
+    </head>
+    <div class='dv1'>
+      <img src="static/images/recog2.jpg" class="img" alt="..." height="250px" width="100%">
+    </div>
+    <h2>Related Technology</h2>
+    <div class=" container-fluid row row-cols-1 row-cols-md-3 ">
+        <div class="col">
+          <div class="card">
+           <a href="#"> <img src="static/images/f1.png" class="card-img-top" alt="..."></a>
+            <div class="card-body">
+                <h5 class="card-title">Face Landmarks</h5>
+                 <p class="card-text">Locate and return keypoints of facecomponents, 
+                  including face contour,eye, eyebrow, lip and nose contour.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+           <a href="#"> <img src="static/images/f2.png" class="card-img-top" alt="..."></a>
+            <div class="card-body">
+              <h5 class="card-title">Face Attributes</h5>
+                 <p class="card-text">Analyze a series of face related attributes including age, gender, smile intensity, head 
+                  pose,eye status, emotion, beauty, eye gaze, mouth status, skin status.</p>
+                 </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+           <a href="#"> <img src="static/images/f3.png" class="card-img-top" alt="..."></a>
+            <div class="card-body">
+              <h5 class="card-title"> Face Comparing</h5>
+              <p class="card-text">Check the likelihood that two facesbelong to the same person.You will get a confidence 
+                  score and thresholds to evaluate the similarity</p>
+            </div>
+          </div>
+        </div>
+</div>
+<h2>Benifits</h2>
+<div id='Bmain' class="container">
+    <div><img src="static/images/m1.png" class="d-block " width="100px" height="100px"></div>
+    <div><img src="static/images/m2.png" class="d-block " width="100px" height="100px"></div>
+    <div><img src="static/images/m2.png" class="d-block " width="100px" height="100px"></div>
+    <div><img src="static/images/m3.png" class="d-block " width="100px" height="100px"></div>
+    
+</div>
+<div id='Wmain' class="container">
+    <div><h5>Unlimited Number of Face</h5></div>
+    <div><h5>Adept to Various Scenes</h5></div>
+    <div><h5>Fast And Accurate</h5></div>
+    <div><h5>Multi InterNarional Award</h5></div>
+    
+</div>
+{% endblock %}

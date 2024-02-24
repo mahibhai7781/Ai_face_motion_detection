@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block content %}
+<head>
+<style>
+  .main{
+    width: 500px;
+    height: 500px;
+    margin: auto;
+    margin-top: 50px;
+  }
+
+</style>
+<title>Sign_up</title>
+</head>
+<div class="main">
+<div class="modal-content rounded-5 shadow">
+    <div class="modal-header p-5 pb-4 border-bottom-0">
+      <!-- <h5 class="modal-title">Modal title</h5> -->
+      <h2 class="fw-bold mb-0">User login Page</h2>
+    </div>
+  
+    <div class="modal-body p-5 pt-0">
+      <form id="form1" action="./sign_up" method="post" autocomplete="off">
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control rounded-4" id="name" name="name" placeholder="User Name" autofocus >
+            <label for="floatingInput">User Name</label>
+          </div>
+        <div class="form-floating mb-3">
+          <input type="email" class="form-control rounded-4" id="email" name="email" placeholder="name@example.com">
+          <label for="floatingInput">Email address</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="number" class="form-control rounded-4" id="mobile" name="mobile" maxlength="10" placeholder="Mobile">
+          <label for="floatingPassword">Mobile</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="password" class="form-control rounded-4" id="password" name="password" placeholder="password">
+            <label for="floatingPassword">Password</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="password" class="form-control rounded-4" id="password1" name="password1" placeholder="password" >
+            <label for="floatingPassword">Conform Password</label>
+            {% csrf_token %}
+          </div>
+          <a href="/sign_up">
+        <button class="w-100 mb-2 btn btn-lg rounded-4 btn-primary" type="submit" name="Submit" onclick="sign()">Sign Up</button>        
+        </button></a>
+        
+      </div> 
+      </form>
+    </div>
+  </div>
+  </div><br><br><br><br><br><br>
+  <script>
+    function sign()
+    {
+      nm=name.value; em=email.value; mb=mobile.value; psw=password.value; cpsw=password1.value;
+    
+      if(nm=='' || em=='' || mb=='' || psw=='' || cpsw=='')
+      {
+         alert("All fields are Compulsory")
+      }
+      else if(psw==cpsw)
+      {
+        alert("Data saved in database successfully")
+      }
+      else{
+        alert("Your entered password is not same, please try again")
+      }
+    }
+   </script>
+  {% endblock %}

@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block content %}
+<head>
+  <style>
+  .main{
+    width: 500px;
+    height: 500px;
+    margin: auto;
+
+  }
+  .body{
+    width: 100%;
+    height: 100%;
+    background-color: gray;
+    margin-top: 0px;
+  }
+
+</style>
+<title>Log_in</title>
+</head>
+<div class='body'><br><br>
+<div class="main">
+<div class="modal-content rounded-5 shadow">
+    <div class="modal-header p-5 pb-4 border-bottom-0">
+      <!-- <h5 class="modal-title">Modal title</h5> -->
+      <h2 class="fw-bold mb-0">User login Page</h2>
+    </div>
+
+    <div class="modal-body p-5 pt-0">
+     
+      <form id="form1" action="/picAdd" method="post" autocomplete="off">
+        <div class="form-floating mb-3">
+          <input type="email" class="form-control rounded-4" id="email" name="email" placeholder="name@example.com" autofocus>
+          <label for="floatingInput">Email address</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="password" class="form-control rounded-4" id="password" name="password" placeholder="Password" >
+          <label for="floatingPassword">Password</label>
+        </div>
+        {% csrf_token %}
+      
+      <button class="w-100 mb-2 btn btn-lg rounded-4 btn-primary" type="submit" name="Submit" onclick="log()">Log In</button>        
+      
+
+        <button class="w-100 mb-2 btn btn-lg rounded-4 btn-success" type="reset" name="Reset">Reset</button>        
+      
+      <h5>Do you have an Account ? &nbsp;&nbsp; <a href="/input" style="text-decoration: none;">Sign Up</a></h5>
+      </div> 
+      </form>
+    </div>
+    
+  </div>
+  </div>
+  </div>
+  <script>
+ function log()
+ {
+   eml=email.value; psw=password.value;
+   if(eml=='' || psw=='')
+   {
+     alert("You Email or Password not entred")
+     return false;
+
+   }
+ }
+  </script>
+  {% endblock %}
